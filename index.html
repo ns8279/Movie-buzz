@@ -7,18 +7,29 @@
     <title>Movie Buzz</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel = "stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
     <nav>
+        <!--NavBar using Materialize-->
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Movie Buzz</a>
-           
+          <a href="index.html" class="brand-logo" id = "logo">Movie Buzz</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li>
+               
+                <input id = "input-search"class="input" type="search" placeholder="What to watch" aria-label="Search">
+                
+              </li>
+              <li>
+                <button class="btn" type="submit">Search</button>
+              </li>
+          </ul>
         </div>
       </nav>
+
+      
     
 
 
