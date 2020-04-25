@@ -24,8 +24,8 @@ ul li {
  }
 
 #movies img, #movie img {
-     width: 90%;
-     margin: 0 auto;
+     width: 100%;
+     
 
  }
 #movies h6 {
@@ -34,8 +34,8 @@ ul li {
 
 /*---Shows CSS----*/
 #show img, #shows img {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+
 
 }
 #shows h6 {
@@ -47,18 +47,18 @@ ul li {
  @media(min-width:960px) {
  #movies .col .card {
      height: 350px;
- }
+}
 
  #movies .col img {
-     height: 260px;
- }
+     height: 250px;
+}
 
  #shows .col .card {
     height: 350px;
 }
 
 #shows .col img {
-    height: 260px;
+    height: 250px;
 }
 
 
