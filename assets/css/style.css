@@ -2,11 +2,12 @@ body {
     background-color: black;
 }
     
-header {
+
+
+#search-text {
     border-radius: 10px;
-    margin: 0px;
-    padding: 0px;
 }
+
 .row {
     border-radius: 10px;
 }
@@ -19,18 +20,18 @@ ul li {
     margin-right: 10px;
 }
 
- h1 {
+h1 {
      border-radius: 10px;
- }
+}
 
 #movies img, #movie img {
      width: 100%;
      
 
- }
+}
 #movies h6 {
      font-size: small;
- }
+}
 
 /*---Shows CSS----*/
 #show img, #shows img {
@@ -60,6 +61,4 @@ ul li {
 #shows .col img {
     height: 250px;
 }
-
-
 }
