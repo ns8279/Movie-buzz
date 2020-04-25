@@ -2,14 +2,14 @@ $(document).ready(() => {
     $('#search-form').on('submit', (e) => {
         var searchText = $('#search-text').val();
         //console.log(searchText);
-        getMoviesInfo(searchText);
+        getShowsInfo(searchText);
         e.preventDefault();
     });
 });
 
-//function to get the movies information on searching for it
+//function to get the shows information on searching for it
 
-var getMoviesInfo = function(searchText) {
+var getShowsInfo = function(searchText) {
    
     //var apiKey = "13cdef0c";
     var apiUrl = "https://www.episodate.com/api/search?q=" + searchText;
@@ -32,7 +32,7 @@ var getMoviesInfo = function(searchText) {
                     
                         <img src="${show.image_thumbnail_path}">
                         <h6 class="card-title">${show.name}</h6>
-                        <a onclick = "movieSelected('${show.id}')" class="btn-small teal lighten-3" href= "#"> Show Details</a>
+                        <a onclick = "showSelected('${show.id}')" class="btn-small teal lighten-3" href= "#"> Show Details</a>
                     
                 </div>
             </div>
@@ -50,17 +50,17 @@ var getMoviesInfo = function(searchText) {
    
 }
 
- //function to pop up the selected movie
-var movieSelected = function(id) {
-    localStorage.setItem('showId', id);
+     //function to pop up the selected show
+        var showSelected = function(id) {
+            localStorage.setItem('showId', id);
 
-    //Change the page
-    window.location = 'show.html';
-    return false;
-}
+            //Change the page
+            window.location = 'show.html';
+            return false;
+        }
 
-//function to get the movie id from local storage
-var getMovie = function() {
+//function to get the show id from local storage
+var getShow = function() {
     var showId = localStorage.getItem('showId');
     //var apiKey = "13cdef0c";
     var apiUrl = " https://www.episodate.com/api/show-details?q=" + showId;
@@ -70,10 +70,10 @@ var getMovie = function() {
         response.json().then(function(response){
         //console.log(response);  
         var show = response.tvShow;
-        //console.log(movie);
+        //console.log(show);
         
 
-        //dynamically display the movie details
+        //dynamically display the shows details
         var output =  ` 
             <div class = "row">
 
