@@ -27,7 +27,7 @@ var getShowsInfo = function(searchText) {
         $.each(shows, (index, show) => {
             output += ` 
             
-            <div class = "col m4">
+            <div class = "col m3">
                 <div class="card">
                     
                         <img src="${show.image_thumbnail_path}">
@@ -50,14 +50,14 @@ var getShowsInfo = function(searchText) {
    
 }
 
-     //function to pop up the selected show
-        var showSelected = function(id) {
-            localStorage.setItem('showId', id);
+//function to pop up the selected show
+var showSelected = function(id) {
+localStorage.setItem('showId', id);
 
-            //Change the page
-            window.location = 'show.html';
-            return false;
-        }
+    //Change the page
+    window.location = 'show.html';
+    return false;
+}
 
 //function to get the show id from local storage
 var getShow = function() {
@@ -71,7 +71,6 @@ var getShow = function() {
         //console.log(response);  
         var show = response.tvShow;
         //console.log(show);
-        
 
         //dynamically display the shows details
         var output =  ` 
@@ -83,8 +82,7 @@ var getShow = function() {
 
                 <div class = "col m7">
                     <h2>${show.name}</h2>
-                    <ul class="collection">
-                        
+                    <ul class="collection">   
                         <li class= "collection-item"> <strrong>Genre: </strong> ${show.genres}</li>
                         <li class= "collection-item"> <strrong>Release Date: </strong> ${show.start_date}</li>
                         <li class= "collection-item"> <strrong>Ratings: </strong> ${show.rating}</li>
@@ -93,7 +91,7 @@ var getShow = function() {
                     </ul>
                 </div>
 
-             </div>
+            </div>
 
         
             <div class = "row">
