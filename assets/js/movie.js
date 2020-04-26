@@ -3,7 +3,8 @@ $(document).ready(() => {
     $('#search-form').on('submit', (e) => {
         var searchText = $('#search-text').val();
         //console.log(searchText);
-        getMoviesInfo(searchText);
+            getMoviesInfo(searchText);
+            searchText = "";
         e.preventDefault();
     });
 });
@@ -122,5 +123,50 @@ var getMovie = function() {
      });
 
 }
+
+//default movies lists on the app
+
+var defaultMovies = function(searchText) {
+    var defaultMovies = localStorage.getItem("movieId");
+    console.log(defaultMovies);
+
+    var apiKey = "13cdef0c";
+    var apiUrl = "https://omdbapi.com/?apikey=" + apiKey +"&s=" + searchText;
+
+    fetch(apiUrl).then(function(response){
+        
+            response.json().then(function(response){
+            //console.log(data);
+            var movies = response.Search;
+            var output = '';
+
+            //function to display the output
+             $.each(movies, (index, movie) => {
+                output += ` 
+
+
+                
+                    <div class = "col m3">
+                    
+                        <div class="card">
+                            
+                                <img src="${movie.Poster}">
+                                <h6 class="card-title">${movie.Title}</h6>
+                                <a onclick = "movieSelected('${movie.imdbID}')" class="btn-small teal lighten-3" href= "#"> Movie Details</a>
+                            
+                        </div>
+                    </div>
+                    
+                    `;
+            });
+             $('#movies').html(output);
+            
+         });
+    
+    });
+}
+
+defaultMovies("new");
+
 
 
