@@ -2,15 +2,10 @@ body {
     background-color: black;
 }
     
-#header-bg {
-    position: sticky;
-    top:0;
-
-}
 
 #search-text {
     border-radius: 10px;
-    position: sticky;
+    
 }
 
 .row {

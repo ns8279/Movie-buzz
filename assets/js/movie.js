@@ -30,7 +30,7 @@ var getMoviesInfo = function(searchText) {
              $.each(movies, (index, movie) => {
                 output += ` 
             
-                    <div class = "col m3 s3">
+                    <div class = "col m3">
                         <div class="card">
                             
                                 <img src="${movie.Poster}">
