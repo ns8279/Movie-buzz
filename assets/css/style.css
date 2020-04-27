@@ -2,10 +2,15 @@ body {
     background-color: black;
 }
     
+#header-bg {
+    position: sticky;
+    top:0;
 
+}
 
 #search-text {
     border-radius: 10px;
+    position: sticky;
 }
 
 .row {
@@ -44,8 +49,53 @@ h1 {
 }
 
 
+
+/* For screen size smaller than 601px */
+#movies .col .card {
+    height: 350px;
+}
+
+#movies .col img {
+    height: 270px;
+}
+
+#shows .col .card {
+   height: 350px;
+}
+
+#shows .col img {
+   height: 270px;
+}
+
+
 /*----Media--*/
- @media(min-width:960px) {
+@media(min-width:601px) {
+    #movies .col .card {
+           height: 300px;
+   }
+      
+   #movies .col img {
+           height: 200px;
+   }
+      
+   #shows .col .card {
+          height: 300px;
+   }
+      
+   #shows .col img {
+          height: 200px;
+   }
+   #movies .col .card a {
+       font-size: 7px;
+   }
+   #shows .col .card a {
+       font-size: 7px;
+   }
+   
+   }
+
+
+@media(min-width:960px) {
  #movies .col .card {
      height: 350px;
 }
@@ -61,4 +111,13 @@ h1 {
 #shows .col img {
     height: 250px;
 }
+#movies .col .card a {
+    font-size: 10px;
 }
+#shows .col .card a {
+    font-size: 10px;
+}
+}
+
+
+

@@ -18,9 +18,11 @@ var getMoviesInfo = function(searchText) {
 
     //make a fetch request to the api
     fetch(apiUrl).then(function(response){
-        if(response.ok){
+        
             response.json().then(function(response){
+                if(response.Response === "True"){    
             //console.log(data);
+            console.log(response);
             var movies = response.Search;
             var output = '';
 
@@ -28,7 +30,7 @@ var getMoviesInfo = function(searchText) {
              $.each(movies, (index, movie) => {
                 output += ` 
             
-                    <div class = "col m3">
+                    <div class = "col m3 s3">
                         <div class="card">
                             
                                 <img src="${movie.Poster}">
@@ -41,17 +43,26 @@ var getMoviesInfo = function(searchText) {
                     `;
             });
              $('#movies').html(output);
-            
-         });
-        } 
-            else {
-                alert("Error:" + response.statusText);
-            }   
-    
+        }
+        else {
+            alert("Error:" + response.Response);
+        //     var output = '';
+        //     var movies = response.Search;
+        //     $.each(movies, (index, movie) =>{
+        //     output += `   
+        //         <div class = "col m12">
+        //          <h3>No Movies Found! Try Again!</h3>
+        //         </div>  
+        //     `;   
+        //     })
+        //     $('#movies').html(output);
+     }     
+ 
+    });        
     })
     .catch(function(error){
          //Notice this '.catch()' getting chained onto the end of the .then() method
-        alert("unable to connect to Movie Buzz! Please try again later");
+        alert("Unable to connect to Movie Buzz! Please try again later");
      });
    
 }
