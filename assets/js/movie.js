@@ -1,4 +1,6 @@
 
+var moviesEl = $('#err');
+
 $(document).ready(() => {
     $('#search-form').on('submit', (e) => {
         var searchText = $('#search-text').val();
@@ -45,7 +47,9 @@ var getMoviesInfo = function(searchText) {
              $('#movies').html(output);
         }
         else {
-            alert("Error:" + response.Response);
+            $('#movies').html("<h3> No Movies found! </h3>");
+            $('#movies').css("color", "white");
+            //modal("Error:" + response.Response);
         //     var output = '';
         //     var movies = response.Search;
         //     $.each(movies, (index, movie) =>{
@@ -62,7 +66,9 @@ var getMoviesInfo = function(searchText) {
     })
     .catch(function(error){
          //Notice this '.catch()' getting chained onto the end of the .then() method
-        alert("Unable to connect to Movie Buzz! Please try again later");
+         
+         alert("unable");
+         //catchError();
      });
    
 }
@@ -175,6 +181,13 @@ var defaultMovies = function(searchText) {
          });
     
     });
+}
+
+
+var catchError = function(){
+    $('#movies').html("<h3> Unable to connect to the Internet! </h3>");
+    $('#movies').css("color", "white");
+    $( "#movies" ).dialog()
 }
 
 defaultMovies("new");
