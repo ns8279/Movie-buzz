@@ -24,7 +24,7 @@ var getShowsInfo = function(searchText) {
         var output = '';
 
         //function to display the output
-        $.each(shows, (index, show) => {
+            $.each(shows, (index, show) => {
             output += ` 
             
             <div class = "col m3">
@@ -38,10 +38,9 @@ var getShowsInfo = function(searchText) {
             </div>
             
             `;
-        });
+            });
 
-        $('#shows').html(output);
-            
+            $('#shows').html(output);    
         });
     })
     .catch(function(error){
