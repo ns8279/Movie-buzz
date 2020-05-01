@@ -4,6 +4,7 @@ body {
 }
     
 /* General CSS for both Movies and Shows Page */
+
 #search-text {
     border-radius: 10px;   
 }
@@ -152,5 +153,13 @@ background: #888;
 }
 }
 
+
+nav .brand-logo {
+    color: black;
+}
+
+nav ul a {
+    color: black;
+}
 
 
