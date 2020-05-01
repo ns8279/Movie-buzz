@@ -47,8 +47,9 @@ var getMoviesInfo = function(searchText) {
              $('#movies').html(output);
         }
         else {
-            $('#movies').html("<h3> No Movies found! </h3>");
+            $('#movies').html("<h3> Oops! No movies found ☹ </h3>");
             $('#movies').css("color", "white");
+            $('#movies').addClass("center-align");
             //modal("Error:" + response.Response);
         //     var output = '';
         //     var movies = response.Search;
@@ -66,7 +67,6 @@ var getMoviesInfo = function(searchText) {
     })
     .catch(function(error){
          //Notice this '.catch()' getting chained onto the end of the .then() method
-         
          alert("unable");
          //catchError();
      });
@@ -126,7 +126,7 @@ var getMovie = function() {
                     ${movie.Plot}
                     <hr>
                     <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class = "waves-light btn-small">IMDB</a>
-                    <a href=" index.html" class = "waves-light btn-small"> Go back to Search </a>
+                    <a href="index1.html" class = "waves-light btn-small"> Go back to Search </a>
                 </div>
             </div>
         

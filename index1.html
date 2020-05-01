@@ -8,21 +8,38 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel = "stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
+    <header >
+        <button id="header-bg"><a href= "tvIndex.html" class = "waves-light btn-small">TV Shows</a></button>
+        <button id="header-bg"><a href= "index.html" class = "waves-light btn-small">Home</a></button>
+        <h1 class = "brand-logo center-align deep-orange lighten-3">Movie Buzz</h1>
+    </header>
 
-    <div class = "container">
-        <h1 class = "brand-logo center-align deep-orange lighten-3">
-            <a href = "index.html">Movie Buzz</a></h1>
+    <div class = "modal" id = "err">
+        
+       
     </div>
+
+        <!--Logo and Search bar-->
+        <div class = "container">
+            <div class = "jumbotron">
+                <h5 class = "center-align white-text text-lighten-3">Search for Movies</h5>
+                 <form id = "search-form" class = "input-field">
+                    <input type = "text" class = "validate white lighten-2" id = "search-text" placeholder= " Search for Movies">
+                </form>
+             </div> 
+         </div>
+        
 
        <!--Display output-->
         <div class = "container">
-            <div class = "card" id = "movie" >
+            <div class = "row" id = "movies">
 
             </div>
         </div>
@@ -36,8 +53,9 @@
             crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script src = "./assets/js/movie.js"></script>
-      <script >
-          getMovie();
-      </script>
 </body>
 </html>
+
+
+
+

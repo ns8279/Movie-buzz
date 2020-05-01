@@ -7,49 +7,40 @@
     <title>Movie Buzz</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel = "stylesheet" href="./assets/css/style.css" />
+    <link rel = "stylesheet" href="./assets/css/parallax.css" />
+            
+    
+    
 </head>
+    <body>
+        <div class="parallax-container">
+            <div class="parallax"><img class = "responsive-image" src="./assets/images/bg.jpg"></div>
+        </div>
 
-<body>
-    <header >
-        <button id="header-bg"><a href= "tvIndex.html" class = "waves-light btn-small">TV Shows</a></button>
-        <h1 class = "brand-logo center-align deep-orange lighten-3">Movie Buzz</h1>
-    </header>
-
-    <div class = "modal" id = "err">
-        
-       
-    </div>
-
-        <!--Logo and Search bar-->
-        <div class = "container">
-            <div class = "jumbotron">
-                <h5 class = "center-align white-text text-lighten-3">Search for Movies</h5>
-                 <form id = "search-form" class = "input-field">
-                    <input type = "text" class = "validate white lighten-2" id = "search-text" placeholder= " Search for Movies">
-                </form>
-             </div> 
-         </div>
-        
-
-       <!--Display output-->
-        <div class = "container">
-            <div class = "row" id = "movies">
-
+        <div class="section white">
+            <div class="row container center-align">
+                <h1 class ="brand-logo center-align">Welcome to Movie Buzz</h1>
+                <h4 class = "center-align">Browse</h4>
+                <button id="header"><a href= "index1.html" class = " center-align white teal-text btn-large col s12">Movies</a></button>
+                <button id="header-bg"><a href= "tvIndex.html" class = "center-align white teal-text btn-large col s12">TV Shows</a></button>
             </div>
         </div>
-    
+
+        <div class="parallax-container">
+            <div class="parallax"><img class = "responsive-image" src="./assets/images/main_bg_1.png"></div>
+         </div>
 
       <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <script
             src="https://code.jquery.com/jquery-3.5.0.min.js"
             integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
             crossorigin="anonymous"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-      <script src = "./assets/js/movie.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src = "./assets/js/parallax.js"></script>   
 </body>
 </html>
