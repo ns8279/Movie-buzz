@@ -27,7 +27,8 @@ This website is available live on:https://ns8279.github.io/Movie-buzz/
 We use GitHub (https://github.com/) for versioning. For the versions available, see the Movie-Buzz.
 
 ## Website Preview
-![Alt text](./assets/images/preview_1.png?raw=true "Title")
+![Alt text](./assets/images/preview_2.png?raw=true "Home")
+![Alt text](./assets/images/preview_1.png?raw=true "Movies")
 
 ## API Resources
 OMDB and Episodate
