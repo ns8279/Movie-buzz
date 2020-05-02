@@ -192,5 +192,3 @@ var catchError = function(){
 
 defaultMovies("new");
 
-
-
