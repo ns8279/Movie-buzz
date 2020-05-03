@@ -38,6 +38,9 @@ header {
 }
 */
 
+nav {
+    border-radius: 10px;
+}
 nav ul a {
     color: black;
 }

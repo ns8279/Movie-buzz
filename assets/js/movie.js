@@ -21,16 +21,16 @@ var getMoviesInfo = function(searchText) {
     //make a fetch request to the api
     fetch(apiUrl).then(function(response){
         
-            response.json().then(function(response){
-                if(response.Response === "True"){    
-            //console.log(data);
-            console.log(response);
-            var movies = response.Search;
-            var output = '';
+        response.json().then(function(response){
+         if(response.Response === "True"){    
+                //console.log(data);
+                console.log(response);
+                var movies = response.Search;
+                var output = '';
 
-            //function to display the output
-             $.each(movies, (index, movie) => {
-                output += ` 
+                //function to display the output
+                $.each(movies, (index, movie) => {
+                    output += ` 
             
                     <div class = "col m3">
                         <div class="card">
@@ -46,24 +46,24 @@ var getMoviesInfo = function(searchText) {
             });
              $('#movies').html(output);
         }
-        else {
+            else {
             $('#movies').html("<h3> Oops! No movies found ☹ </h3>");
             $('#movies').css("color", "white");
             $('#movies').addClass("center-align");
             //modal("Error:" + response.Response);
-        //     var output = '';
-        //     var movies = response.Search;
-        //     $.each(movies, (index, movie) =>{
-        //     output += `   
-        //         <div class = "col m12">
-        //          <h3>No Movies Found! Try Again!</h3>
-        //         </div>  
-        //     `;   
-        //     })
-        //     $('#movies').html(output);
-     }     
+            //     var output = '';
+            //     var movies = response.Search;
+            //     $.each(movies, (index, movie) =>{
+            //     output += `   
+            //         <div class = "col m12">
+            //          <h3>No Movies Found! Try Again!</h3>
+            //         </div>  
+            //     `;   
+            //     })
+            //     $('#movies').html(output);
+            }     
  
-    });        
+        });        
     })
     .catch(function(error){
          //Notice this '.catch()' getting chained onto the end of the .then() method
@@ -73,14 +73,15 @@ var getMoviesInfo = function(searchText) {
    
 }
 
- //function to pop up the selected movie
+//function to pop up the selected movie
 var movieSelected = function(id) {
     localStorage.setItem('movieId', id);
-
+    
     //Change the page
     window.location = 'movie.html';
     return false;
 }
+
 
 //function to get the movie id from local storage
 var getMovie = function() {
@@ -137,12 +138,58 @@ var getMovie = function() {
     })
     .catch(function(error){
          console.log(error);
-     });
+    });
+
+        netflix
+      fetch("https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup?country=US&source_id="+ movieId+ "&source=imdb", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
+            "x-rapidapi-key": "ce6f9a9ffdmsh41227b0126ee22dp1707bajsnef3f7495efcb"
+        }
+        })
+        .then(function(response){
+            response.json().then(function(response){
+                var movie1 = response;
+                console.log(movie1);
+
+        var output = "";
+        output = `
+            <div class = "row">
+                <div class = "col m12">
+            
+                <ul class="collection">
+                   
+                    <li class= "collection-item"> 
+                     <a href = "${movie1.collection.locations[0].url}" ><img src = "${movie1.collection.locations[0].icon}" /></a>
+                    </li>
+                    <li class= "collection-item">
+                     <a href = "${movie1.collection.locations[1].url}" ><img src = "${movie1.collection.locations[1].icon}" /></a>
+                    </li>
+                    <li class= "collection-item">
+                     <a href = "${movie1.collection.locations[2].url}" ><img src = "${movie1.collection.locations[2].icon}" /></a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        `;
+        $('#netflix').html(output);
+        })
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
 }
 
-//default movies lists on the app
 
+var catchError = function(){
+    $('#movies').html("<h3> Unable to connect to the Internet! </h3>");
+    $('#movies').css("color", "black");
+    $( "#movies" ).dialog()
+}
+
+//default movies lists on the app
 var defaultMovies = function(searchText) {
     var defaultMovies = localStorage.getItem("movieId");
     console.log(defaultMovies);
@@ -152,7 +199,7 @@ var defaultMovies = function(searchText) {
 
     fetch(apiUrl).then(function(response){
         
-            response.json().then(function(response){
+        response.json().then(function(response){
             //console.log(data);
             var movies = response.Search;
             var output = '';
@@ -160,8 +207,6 @@ var defaultMovies = function(searchText) {
             //function to display the output
              $.each(movies, (index, movie) => {
                 output += ` 
-
-
                 
                     <div class = "col m3">
                     
@@ -178,17 +223,9 @@ var defaultMovies = function(searchText) {
             });
              $('#movies').html(output);
             
-         });
+        });
     
     });
 }
 
-
-var catchError = function(){
-    $('#movies').html("<h3> Unable to connect to the Internet! </h3>");
-    $('#movies').css("color", "black");
-    $( "#movies" ).dialog()
-}
-
 defaultMovies("new");
-

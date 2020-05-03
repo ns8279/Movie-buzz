@@ -18,7 +18,8 @@ var getShowsInfo = function(searchText) {
     //make a fetch request to the api
     fetch(apiUrl).then(function(response){
         response.json().then(function(response){
-        //console.log(data);
+        //console.log(response);
+        if (response.total === 0) {
         var shows = response.tv_shows;
 
         var output = '';
@@ -40,7 +41,12 @@ var getShowsInfo = function(searchText) {
             `;
             });
 
-            $('#shows').html(output);    
+            $('#shows').html(output);   
+        } else {
+            $('#shows').html("<h3> Oops! No shows found ☹ </h3>");
+            $('#shows').css("color", "white");
+            $('#shows').addClass("center-align");
+        }
         });
     })
     .catch(function(error){
@@ -113,4 +119,50 @@ var getShow = function() {
      });
 
 }
+
+//Dynamically Rendering Default shows on the Television Page
+var defaultShows = function(searchText) {
+
+    //var apiKey = "13cdef0c";
+    var apiUrl = "https://www.episodate.com/api/search?q=" + searchText;
+    //var apiUrl = "https://omdbapi.com/?apikey=" + apiKey +"&s=" + searchText;
+
+    //make a fetch request to the api
+    fetch(apiUrl).then(function(response){
+        response.json().then(function(response){
+            //console.log(response);
+            var shows = response.tv_shows;
+
+                var output = '';
+
+            //function to display the output
+            $.each(shows, (index, show) => {
+                output += ` 
+            
+                <div class = "col m3">
+                    <div class="card">
+                    
+                        <img src="${show.image_thumbnail_path}">
+                        <h6 class="card-title">${show.name}</h6>
+                        <a onclick = "showSelected('${show.id}')" class="btn-small teal lighten-3" href= "#"> Show Details</a>
+                    
+                    </div>
+                </div>
+            
+            `;
+            });
+
+            $('#shows').html(output);   
+        
+        });
+    })
+    .catch(function(error){
+         console.log(error);
+     });
+   
+}
+
+defaultShows("love");
+
+
 
