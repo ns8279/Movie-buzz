@@ -99,7 +99,7 @@ var getShow = function() {
                     ${show.description}
                     <hr>
                     <a href="tvIndex.html" class = "waves-light btn-small"> Go back to Search </a>
-                    <a href="index.html" class = "waves-light btn-small"> Go back to Movies </a>
+                    <a href="index1.html" class = "waves-light btn-small"> Go back to Movies </a>
                 </div>
             </div>
         

@@ -186,7 +186,7 @@ var defaultMovies = function(searchText) {
 
 var catchError = function(){
     $('#movies').html("<h3> Unable to connect to the Internet! </h3>");
-    $('#movies').css("color", "white");
+    $('#movies').css("color", "black");
     $( "#movies" ).dialog()
 }
 
