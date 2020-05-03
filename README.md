@@ -25,6 +25,12 @@ SO THAT I have good list of movies/shows is good to watch
 ## Deployment
 This website is available live on:https://ns8279.github.io/Movie-buzz/ 
 
+## Technologies used
+- HTML
+- CSS
+- Materialize
+- JQuery
+
 ## Versioning
 We use GitHub (https://github.com/) for versioning. For the versions available, see the Movie-Buzz.
 
