@@ -122,7 +122,7 @@ var getMovie = function() {
 
         
             <div class = "row">
-                <div class = "card">
+                <div class = "card plot">
                     <h3> Plot </h3>
                     ${movie.Plot}
                     <hr>
@@ -161,13 +161,16 @@ var getMovie = function() {
                 <ul class="collection">
                    
                     <li class= "collection-item"> 
-                     <a href = "${movie1.collection.locations[0].url}" ><img src = "${movie1.collection.locations[0].icon}" /></a>
+                     <a href = "${movie1.collection.locations[0].url}" target = "_blank" ><img src = "${movie1.collection.locations[0].icon}" /></a>
                     </li>
                     <li class= "collection-item">
-                     <a href = "${movie1.collection.locations[1].url}" ><img src = "${movie1.collection.locations[1].icon}" /></a>
+                     <a href = "${movie1.collection.locations[1].url}" target = "_blank" ><img src = "${movie1.collection.locations[1].icon}" /></a>
                     </li>
                     <li class= "collection-item">
-                     <a href = "${movie1.collection.locations[2].url}" ><img src = "${movie1.collection.locations[2].icon}" /></a>
+                     <a href = "${movie1.collection.locations[2].url}" target = "_blank" ><img src = "${movie1.collection.locations[2].icon}" /></a>
+                    </li>
+                    <li class= "collection-item">
+                     <a href = "${movie1.collection.locations[3].url}" target = "_blank" ><img src = "${movie1.collection.locations[3].icon}" /></a>
                     </li>
                 </ul>
                 </div>
